@@ -5,4 +5,6 @@ COPY source_code/ /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN pylint server.py || true
+
 ENTRYPOINT ["python", "server.py"]
